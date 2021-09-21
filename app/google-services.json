@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "704125719613",
+    "firebase_url": "https://orget-1999-default-rtdb.firebaseio.com",
+    "project_id": "orget-1999",
+    "storage_bucket": "orget-1999.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704125719613:android:f190ac2cb8c1f9116c8654",
+        "android_client_info": {
+          "package_name": "com.example.go_organic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704125719613-ddk7vdj5tj98bgnqi6j1ovmsqm369ej6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNnPinZTEC9KwIKH8N7PGF6qPIJs8aCbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704125719613-ddk7vdj5tj98bgnqi6j1ovmsqm369ej6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704125719613:android:64e1269519732a9c6c8654",
+        "android_client_info": {
+          "package_name": "com.example.orget"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704125719613-ddk7vdj5tj98bgnqi6j1ovmsqm369ej6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNnPinZTEC9KwIKH8N7PGF6qPIJs8aCbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704125719613-ddk7vdj5tj98bgnqi6j1ovmsqm369ej6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

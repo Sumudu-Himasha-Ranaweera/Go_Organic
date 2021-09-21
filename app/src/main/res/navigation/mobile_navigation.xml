@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.go_organic.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.go_organic.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="com.example.go_organic.ui.category.CategoryFragment"
+        android:label="@string/category"
+        tools:layout="@layout/fragment_category" />
+
+    <fragment
+        android:id="@+id/nav_Offers"
+        android:name="com.example.go_organic.OffersFragment"
+        android:label="Offers"
+        tools:layout="@layout/fragment_offers" />
+
+    <fragment
+        android:id="@+id/nav_NewProducts"
+        android:name="com.example.go_organic.NewProductsFragment"
+        android:label="New Products"
+        tools:layout="@layout/fragment_new_products" />
+
+    <fragment
+        android:id="@+id/nav_Payment"
+        android:name="com.example.go_organic.PaymentFragment"
+        android:label="@string/payments"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/nav_Cart"
+        android:name="com.example.go_organic.MyCartFragment"
+        android:label="@string/my_cart"
+        tools:layout="@layout/fragment_my_cart" />
+    <fragment
+        android:id="@+id/nav_Farmer"
+        android:name="com.example.go_organic.JoinFarmerFragment"
+        android:label="@string/join_as_a_farmer"
+        tools:layout="@layout/fragment_join_farmer" />
+
+</navigation>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:iconTint="@color/black"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person"
+            android:iconTint="@color/black"
+            android:title="@string/profile" />
+
+        <item
+            android:id="@+id/nav_category"
+            android:icon="@drawable/ic_category"
+            android:iconTint="@color/black"
+            android:title="@string/category" />
+
+        <item
+            android:id="@+id/nav_Offers"
+            android:icon="@drawable/ic_offer"
+            android:iconTint="@color/black"
+            android:title="@string/offers" />
+
+        <item
+            android:id="@+id/nav_NewProducts"
+            android:icon="@drawable/ic_new_products"
+            android:iconTint="@color/black"
+            android:title="@string/new_products" />
+
+        <item
+            android:id="@+id/nav_Payment"
+            android:icon="@drawable/ic_payment"
+            android:iconTint="@color/black"
+            android:title="@string/payments" />
+
+        <item
+            android:id="@+id/nav_Cart"
+            android:icon="@drawable/ic_cart"
+            android:iconTint="@color/black"
+            android:title="@string/my_cart" />
+
+        <item android:title="Join">
+            <menu>
+                <item
+                    android:id="@+id/nav_Farmer"
+                    android:icon="@drawable/ic_join"
+                    android:iconTint="@color/black"
+                    android:title="@string/join_as_a_farmer" />
+            </menu>
+        </item>
+
+    </group>
+</menu>
