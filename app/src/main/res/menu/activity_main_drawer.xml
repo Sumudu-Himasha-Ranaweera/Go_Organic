@@ -37,7 +37,7 @@
             android:id="@+id/nav_Payment"
             android:icon="@drawable/ic_payment"
             android:iconTint="@color/black"
-            android:title="@string/payments" />
+            android:title="@string/payment" />
 
         <item
             android:id="@+id/nav_Cart"

@@ -26,19 +26,19 @@
     <fragment
         android:id="@+id/nav_Offers"
         android:name="com.example.go_organic.OffersFragment"
-        android:label="Offers"
+        android:label="@string/offers"
         tools:layout="@layout/fragment_offers" />
 
     <fragment
         android:id="@+id/nav_NewProducts"
         android:name="com.example.go_organic.NewProductsFragment"
-        android:label="New Products"
+        android:label="@string/new_products"
         tools:layout="@layout/fragment_new_products" />
 
     <fragment
         android:id="@+id/nav_Payment"
         android:name="com.example.go_organic.PaymentFragment"
-        android:label="@string/payments"
+        android:label="@string/payment"
         tools:layout="@layout/fragment_payment" />
     <fragment
         android:id="@+id/nav_Cart"

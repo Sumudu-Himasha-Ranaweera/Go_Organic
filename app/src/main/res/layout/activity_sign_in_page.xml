@@ -126,6 +126,7 @@
         android:layout_width="47dp"
         android:layout_height="46dp"
         android:layout_marginTop="52dp"
+        android:elevation="5dp"
         android:background="@drawable/bubble_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.901"

@@ -1,22 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/White_Smoke"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:elevation="3dp"
+        android:layout_centerInParent="true"/>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:elevation="3dp"
+                android:id="@+id/search_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawableTint="@color/Light_green"
+                android:background="@drawable/custom_search"
+                android:padding="13dp"
+                android:hint="Search Your Item Here......."
+                android:drawablePadding="5dp"/>
+
+            //Popular Products---------------------------------------
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:layout_weight="1"
+                    android:text="Popular Products"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/view_all_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/opensans_bold"
+                    android:gravity="end"
+                    android:text="View All"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/Forest_Green" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pop_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"/> //End Here
+
+            //Explore Products---------------------------------------
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:layout_weight="1"
+                    android:text="Explore Products"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/view_all_explore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/opensans_bold"
+                    android:gravity="end"
+                    android:text="View All"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/Forest_Green" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/explore_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"/> //End Here
+
+            //Recommended Products---------------------------------------
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:layout_weight="1"
+                    android:text="Recommended"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/view_all_recommended"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/opensans_bold"
+                    android:gravity="end"
+                    android:text="View All"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/Forest_Green" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommended_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"/> //End Here
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

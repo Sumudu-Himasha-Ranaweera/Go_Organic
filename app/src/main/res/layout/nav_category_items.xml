@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="13dp"
+    app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White_Smoke"
+        android:orientation="horizontal">
+
+        //Image
+        <ImageView
+            android:id="@+id/nav_cat_img"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/image_border"
+            android:scaleType="centerInside"
+            android:src="@drawable/organic_vege" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            //Name
+            <TextView
+                android:id="@+id/nav_cat_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="false"/>
+
+            //Description
+            <TextView
+                android:id="@+id/nav_cat_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/rubik"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"/>
+
+            //Discount
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Discount"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            //Discount tag
+            <TextView
+                android:id="@+id/nav_cat_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="20% OFF"
+                android:textColor="@color/Deep_Blue"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            //Right Arrow
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/right_arrow2" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

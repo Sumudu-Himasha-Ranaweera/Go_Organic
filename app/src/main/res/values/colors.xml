@@ -12,4 +12,9 @@
     <color name="Light_Yellow">#ffff66</color>
     <color name="Light_Purple">#9c27b0</color>
     <color name="green">#8bc34a</color>
+    <color name="Forest_Green">#228B22</color>
+    <color name="Deep_Blue">#0000FF</color>
+    <color name="White_Smoke">#f5f5f5</color>
+
+
 </resources>
