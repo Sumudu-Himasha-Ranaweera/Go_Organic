@@ -1,6 +1,8 @@
 package com.example.go_organic.models;
 
-public class ViewAllModel {
+import java.io.Serializable;
+
+public class ViewAllModel implements Serializable {
 
     String name;
     String rating;
