@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="80dp"
@@ -21,61 +21,120 @@
             app:civ_border_color="#FF000000"/>
 
         <TextView
+            android:id="@+id/datetext"
+            android:text="Today at: 13:05:56pm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/nametext"
-            android:text="Customer Name"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/img1"
+            android:layout_marginStart="8dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toRightOf="@+id/img1"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
             />
 
         <TextView
+            android:id="@+id/ntext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/contacttext"
-            android:text="Contact"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/nametext"
             android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_below="@+id/datetext"
+            android:text="Customer Name   : "
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:textStyle="bold"
             />
+
         <TextView
+            android:id="@+id/ctext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/addresstext"
-            android:text="Address"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/contacttext"
             android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_below="@+id/ntext"
+            android:text="Contact No            : "
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/atext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_below="@+id/ctext"
+            android:text="Shipping Address : "
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:textStyle="bold"
             />
+
+        <TextView
+            android:id="@+id/nametext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_below="@+id/datetext"
+            android:text="Customer Name"
+            android:textColor="#000"
+            android:textSize="17sp"
+            />
+
+        <TextView
+            android:id="@+id/contacttext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nametext"
+            android:layout_marginLeft="160dp"
+            android:layout_toRightOf="@+id/img1"
+            android:text="Contact Number"
+            android:textColor="#000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/addresstext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contacttext"
+            android:layout_marginLeft="160dp"
+            android:layout_toRightOf="@+id/img1"
+            android:text="Address"
+            android:textColor="#000"
+            android:textSize="17sp" />
 
         <LinearLayout
             android:layout_below="@+id/addresstext"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
             <Button
-                android:layout_width="173dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnView"
+                android:layout_width="143dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="17dp"
+                android:background="#8bc34a"
                 android:text="View"
                 android:textAllCaps="false"
-                android:layout_marginRight="5dp"
-                android:id="@+id/btnView"/>
+                android:textSize="20dp" />
 
             <Button
-                android:layout_width="173dp"
-                android:layout_height="wrap_content"
-                android:text="Delete"
-                android:textAllCaps="false"
+                android:id="@+id/btnDelete"
+                android:layout_width="143dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="5dp"
-                android:id="@+id/btnDelete"/>
+                android:background="#FFA50714"
+                android:text="Delete"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+
 
         </LinearLayout>
 

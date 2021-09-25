@@ -10,21 +10,23 @@
 
     <TextView
         android:id="@+id/ctext"
-        android:layout_width="241dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="265dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="68dp"
         android:text="Pick to ship Dashboard"
+        android:textAlignment="center"
         android:textColor="#000"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="1500dp"
+        android:layout_height="1488dp"
         android:background="#fafc56"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,23 +36,40 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/Theme.Go_Organic.AppBarOverlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:theme="@style/Theme.Go_Organic.AppBarOverlay">
+        app:layout_constraintTop_toTopOf="parent">
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="417dp"
-        android:layout_height="59dp"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
         android:background="@color/green"
-        app:title="Delivery Management"
-        app:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Delivery Management"
+        app:titleTextColor="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="69dp"
+        android:layout_height="59dp"
+        android:backgroundTint="@color/black"
+        android:clickable="true"
+        android:onClick="btnCompletedDelivery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.936"
+        app:srcCompat="@drawable/correct" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

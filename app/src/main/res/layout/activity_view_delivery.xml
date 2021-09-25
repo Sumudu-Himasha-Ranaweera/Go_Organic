@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewDeliveryActivity">
+    tools:context=".ViewDeliveryActivity"
+    android:background="#8bc34a">
 
     <Button
         android:id="@+id/button2"
@@ -16,7 +17,7 @@
         android:text="Delivery charges"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="27dp"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +33,7 @@
         android:text="View Location"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="27dp"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"

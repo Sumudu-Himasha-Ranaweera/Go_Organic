@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -46,5 +47,10 @@ public class DeliveryActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         deliveryAdapter.stopListening();
+    }
+
+    public void btnCompletedDelivery(View view) {
+        Intent intent = new Intent(this,CompletedDeliveryActivity.class);
+        startActivity(intent);
     }
 }
