@@ -25,72 +25,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/ItemTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ItemTotal"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/LKR1500"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <TextView
-        android:id="@+id/LKR1500"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/LKR1550"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/DeliveryCharge"
-        android:layout_width="192dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="32dp"
-        android:text="@string/DeliveryCharge"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/LKR250"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/LKR250"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/LKR250"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Discount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="@string/Discount"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/LKR00"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/LKR00"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="44dp"
-        android:text="@string/LKR00"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonTotalToPay"
+        android:id="@+id/txtTotalToPay"
         android:layout_width="371dp"
         android:layout_height="60dp"
         android:backgroundTint="@color/white"
@@ -98,7 +36,7 @@
         android:elegantTextHeight="false"
         android:fontFamily="sans-serif-medium"
         android:outlineProvider="none"
-        android:text="Total to pay      LKR 1800.00"
+        android:hint="Total to pay      LKR 1800.00"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintVertical_bias="0.177" />
 
     <TextView
         android:id="@+id/DeliveryAddress"
@@ -157,6 +95,7 @@
         android:outlineProvider="paddedBounds"
         android:text="Place Order"
         android:textSize="28sp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -193,7 +132,6 @@
         android:layout_marginStart="204dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Amandi Upadya"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -207,7 +145,7 @@
         android:layout_marginTop="368dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="B2,Hill Crescent, Col 07."
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -219,50 +157,8 @@
         android:layout_marginTop="412dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="0756453424"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:id="@+id/Home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/Home"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.994" />
-
-    <TextView
-        android:id="@+id/Account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/Account"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/Cart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/Cart"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

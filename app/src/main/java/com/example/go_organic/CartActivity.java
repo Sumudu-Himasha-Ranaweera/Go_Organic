@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -28,6 +29,7 @@ public class CartActivity extends AppCompatActivity {
     private Button button1;
     private Button button2;
     TextView txtTotalAmount;
+    EditText checkTotalAmount;
     private String total;
 
     @Override
@@ -52,6 +54,7 @@ public class CartActivity extends AppCompatActivity {
 
         txtTotalAmount= (TextView) findViewById(R.id.CartTotalAmount);
         button2 =(Button) findViewById(R.id.M_Calculate);
+
 
         button1 = (Button) findViewById(R.id.ReadyToCheckout);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -86,18 +89,14 @@ public class CartActivity extends AppCompatActivity {
     }
 
     public void opencheckout(){
-
-        total = txtTotalAmount.getText().toString().trim();
         Intent intent = new Intent(this, checkout.class);
-        //intent.putExtra(checkout.totalAmount,total);
-        //intent.putExtra("Total Amount :", cartAdapter.overTotalPrice);
+        intent.putExtra("Total", String.valueOf(cartAdapter.overTotalPrice));
         startActivity(intent);
     }
 
     public void calculateTotal(){
         txtTotalAmount.setText("Total Amount : LKR"+String.valueOf(cartAdapter.overTotalPrice));
-        Intent intent = new Intent(this, CartAdapter.class);
-       intent.putExtra("Total Amount :", String.valueOf(cartAdapter.overTotalPrice));
+
     }
 
 }

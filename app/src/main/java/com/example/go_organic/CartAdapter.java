@@ -53,10 +53,8 @@ public class CartAdapter extends FirebaseRecyclerAdapter<CartModel,CartAdapter.m
         holder.price.setText(model.getPrice());
         holder.quantity.setText(model.getQuantity());
 
-
         int oneTypeProductTPrice = ((Integer.valueOf(model.getPrice())))*Integer.valueOf(model.getQuantity());
         overTotalPrice = overTotalPrice + oneTypeProductTPrice;
-
 
         Glide.with(holder.img.getContext())
                 .load(model.getCurl())
