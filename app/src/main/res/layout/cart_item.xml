@@ -10,70 +10,122 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:background="#A6D175">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/ic_launcher"
             android:id="@+id/cartimg1"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#ff000000"/>
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#ff000000"
+            app:civ_border_width="2dp" />
 
         <TextView
+            android:id="@+id/ntext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/pNameText"
-            android:text="Product Name"
+            android:layout_marginLeft="80dp"
+            android:text="Product Name  : "
+            android:textColor="@color/white"
+            android:textSize="17sp"
+
             android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/cartimg1"
-            android:layout_marginLeft="10dp"/>
+            />
 
         <TextView
+            android:id="@+id/ctext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_below="@+id/ntext"
+            android:text="Quantity             : "
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/atext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ctext"
+            android:layout_marginLeft="80dp"
+            android:text="Price                   : "
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pNameText"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+            android:layout_toRightOf="@+id/cartimg1"
+            android:text="Product Name"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+             />
+
+        <TextView
             android:id="@+id/CQuantity"
-            android:text="Quantity"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/cartimg1"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/pNameText"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toRightOf="@+id/cartimg1"
+            android:text="Quantity"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/CPrice"
-            android:text="Price, 1kg"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/cartimg1"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/CQuantity"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="-2dp"
+            android:layout_toRightOf="@+id/cartimg1"
+            android:text="Price, 1kg"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            />
 
         <LinearLayout
             android:layout_below="@id/CPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="80sp"
+            android:layout_marginTop="24dp">
 
             <Button
-                android:layout_width="173dp"
-                android:layout_height="wrap_content"
-                android:text="Edit"
-                android:textAllCaps="false"
+                android:id="@+id/CBtnDelete"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:id="@+id/CBtnEdit"/>
-
-            <Button
-                android:layout_width="173dp"
-                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="sans-serif-black"
                 android:text="Delete"
                 android:textAllCaps="false"
+                android:textColor="@color/green"
+               />
+
+            <Button
+                android:id="@+id/CBtnEdit"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
                 android:layout_marginRight="5dp"
-                android:id="@+id/CBtnDelete"/>
+                android:background="@color/white"
+                android:fontFamily="sans-serif-black"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:textColor="@color/green" />
 
 
         </LinearLayout>
