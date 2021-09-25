@@ -25,4 +25,19 @@
     <string name="payments">Payments</string>
     <string name="offers">Offers</string>
     <string name="new_products">New Products</string>
+    <string name="BillDetails">Bill Details</string>
+    <string name="ItemTotal">Item Total</string>
+    <string name="LKR1550">LKR 1550</string>
+    <string name="DeliveryCharge">Delivery Charge</string>
+    <string name="LKR250">LKR 250</string>
+    <string name="Discount">Discount</string>
+    <string name="LKR00">LKR 00</string>
+    <string name="DeliveryAddress">Delivery Address</string>
+    <string name="Address">Address</string>
+    <string name="TermsAndCondition">Terms And Condition</string>
+    <string name="Number">Number</string>
+    <string name="ReceiverName">Receiver Name</string>
+    <string name="Account">Account</string>
+    <string name="Cart">Cart</string>
+    <string name="Home">Home</string>
 </resources>

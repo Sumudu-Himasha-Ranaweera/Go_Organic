@@ -20,7 +20,9 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 import org.jetbrains.annotations.NotNull;
@@ -33,7 +35,8 @@ public class CartAdapter extends FirebaseRecyclerAdapter<CartModel,CartAdapter.m
 
     int overTotalPrice=0;
     TextView txtTotalAmount;
-
+    FirebaseFirestore firestore;
+    FirebaseAuth auth;
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -43,8 +46,6 @@ public class CartAdapter extends FirebaseRecyclerAdapter<CartModel,CartAdapter.m
      */
     public CartAdapter(@NotNull FirebaseRecyclerOptions<CartModel> options) {
         super(options);
-
-
     }
 
     @Override

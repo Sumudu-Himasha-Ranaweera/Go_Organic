@@ -9,15 +9,13 @@ import com.example.go_organic.OnBoard.OnBoardingFragment1;
 import com.example.go_organic.OnBoard.OnBoardingFragment2;
 import com.example.go_organic.OnBoard.OnBoardingFragment3;
 
-import org.jetbrains.annotations.NotNull;
 
 public class ViewPager extends FragmentPagerAdapter {
-    public ViewPager(@NonNull @NotNull FragmentManager fm, int behavior) {
+    public ViewPager(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 
     @NonNull
-    @NotNull
     @Override
     public Fragment getItem(int position) {
 

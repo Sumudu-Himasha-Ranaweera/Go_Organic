@@ -20,7 +20,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import org.jetbrains.annotations.NotNull;
 
 public class CartActivity extends AppCompatActivity {
@@ -37,14 +40,17 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
+        //firestore = FirebaseFirestore.getInstance();
+        //auth = FirebaseAuth.getInstance();
+
         recyclerView = (RecyclerView)findViewById(R.id.M_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this ));
 
 
         FirebaseRecyclerOptions<CartModel> options =
-              new FirebaseRecyclerOptions.Builder<CartModel>()
+                new FirebaseRecyclerOptions.Builder<CartModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Cart Items"), CartModel.class)
-                       .build();
+                        .build();
 
         cartAdapter = new CartAdapter(options);
         recyclerView.setAdapter(cartAdapter);

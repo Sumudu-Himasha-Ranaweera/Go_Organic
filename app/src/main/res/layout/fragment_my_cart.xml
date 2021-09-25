@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Light_green"
+    android:backgroundTint="@color/Light_green"
     tools:context=".MyCartFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <Button
+        android:id="@+id/btn_my_cart"
+        android:layout_width="242dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="600dp"
+        android:background="@color/Light_Yellow"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="My Cart"
+        android:textColor="@color/Light_Blue"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="426dp"
+        android:layout_height="576dp"
+        android:src="@drawable/cart2" />
 
 </FrameLayout>
