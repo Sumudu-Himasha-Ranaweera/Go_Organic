@@ -6,38 +6,89 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MyCartFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/new_products_img"
-            android:layout_width="450dp"
-            android:layout_height="400dp"
-            android:layout_marginTop="136dp"
-            android:src="@drawable/farmer2"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="164dp"
+            android:src="@drawable/add_to_cart"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="128dp"
+            android:layout_marginBottom="168dp"
             android:fontFamily="@font/patrick_hand"
             android:text="Sorry There is no Products Yet"
             android:textAlignment="center"
-            android:textColor="@color/green"
+            android:textColor="@color/Deep_Blue"
             android:textSize="40dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/txt_totalAmount"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#65a765"
+                android:fontFamily="@font/rubik"
+                android:text="Total Price: Rs 0/="
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="15dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/View_cart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_totalAmount"
+                app:layout_constraintVertical_bias="0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/View_cart"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button2"
+                android:text="View Cart"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
+

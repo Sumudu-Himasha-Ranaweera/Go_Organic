@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cdffcd"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        //Product Name
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Product Name : "
+                android:textSize="20dp"
+                android:fontFamily="@font/opensans_bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/patrick_hand"
+                android:text="Product Name"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+
+
+        </LinearLayout>
+
+        //Product Price
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Product Price : "
+                android:textSize="20dp"
+                android:fontFamily="@font/opensans_bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/product_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Product Price "
+                android:textSize="22dp"
+                android:fontFamily="@font/patrick_hand"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+        //Current Date
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Current Date : "
+                android:textSize="20dp"
+                android:fontFamily="@font/opensans_bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/current_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Current Date "
+                android:textSize="22dp"
+                android:fontFamily="@font/patrick_hand"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+        //Current Time
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Current Time : "
+                android:textSize="20dp"
+                android:fontFamily="@font/opensans_bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/current_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Current Time"
+                android:textSize="22dp"
+                android:fontFamily="@font/patrick_hand"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+        //Total Price
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Price : "
+                android:textSize="20dp"
+                android:fontFamily="@font/opensans_bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Price "
+                android:textSize="22dp"
+                android:fontFamily="@font/patrick_hand"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+        //
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Quantity : "
+                android:textSize="20dp"
+                android:fontFamily="@font/opensans_bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/total_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total Quantity "
+                android:textSize="22dp"
+                android:fontFamily="@font/patrick_hand"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

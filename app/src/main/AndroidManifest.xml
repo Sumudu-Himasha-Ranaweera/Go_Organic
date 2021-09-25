@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Go_Organic">
-        <activity android:name=".DetailedActivity"></activity>
+        <activity android:name=".NavCategoryActivity"></activity>
+        <activity android:name=".DetailedActivity" />
         <activity android:name=".ViewAllActivity" />
         <activity
             android:name=".HomePage"

@@ -1,5 +1,6 @@
 package com.example.go_organic;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -8,9 +9,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.go_organic.models.MyCartModel;
 import com.example.go_organic.models.ViewAllModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
 
 public class DetailedActivity extends AppCompatActivity {
 
@@ -23,6 +38,10 @@ public class DetailedActivity extends AppCompatActivity {
     Button addtoCart;
     Toolbar toolbar;
 
+
+    FirebaseFirestore firestore;
+    FirebaseAuth auth;
+
     ViewAllModel viewAllModel = null;
 
     @Override
@@ -33,6 +52,9 @@ public class DetailedActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        firestore = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
 
         final Object object = getIntent().getSerializableExtra("detail");
         if (object instanceof ViewAllModel){
@@ -75,6 +97,13 @@ public class DetailedActivity extends AppCompatActivity {
 
         }
         addtoCart = findViewById(R.id.add_to_cart);
+        addtoCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addedtoCart();
+            }
+        });
+
 
         addItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +112,7 @@ public class DetailedActivity extends AppCompatActivity {
                 if (totalQuantity < 9){
                     totalQuantity++;
                     quantity.setText(String.valueOf(totalQuantity));
+                    totalPrice = viewAllModel.getPrice() * totalQuantity;
                 }
 
             }
@@ -94,8 +124,45 @@ public class DetailedActivity extends AppCompatActivity {
                 if (totalQuantity > 1){
                     totalQuantity--;
                     quantity.setText(String.valueOf(totalQuantity));
+                    totalPrice = viewAllModel.getPrice() * totalQuantity;
                 }
 
+            }
+        });
+    }
+
+    private void addedtoCart() {
+        String saveCurrentDate,saveCurrentTime;
+        Calendar calForDate = Calendar.getInstance();
+
+        SimpleDateFormat currentDate = new SimpleDateFormat("MM dd, yyyy");
+        saveCurrentDate = currentDate.format(calForDate.getTime());
+
+        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+        saveCurrentTime = currentTime.format(calForDate.getTime());
+
+        final HashMap<String,Object> cartMap = new HashMap<>();
+
+        cartMap.put("productName", viewAllModel.getName());
+        cartMap.put("productPrice", price.getText().toString());
+        cartMap.put("currentDate", saveCurrentDate);
+        cartMap.put("currentTime", saveCurrentTime);
+        cartMap.put("totalQuantity", quantity.getText().toString());
+        cartMap.put("totalPrice", totalPrice);
+
+        //new
+        /*FirebaseRecyclerOptions<MyCartModel> options =
+                new FirebaseRecyclerOptions.Builder<MyCartModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Cart Items"), MyCartModel.class)
+                        .build();*/
+        //end
+
+        firestore.collection("AddedProducts").document(auth.getCurrentUser().getUid())
+                .collection("CurrentUser").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+            @Override
+            public void onComplete(@NonNull @NotNull Task<DocumentReference> task) {
+                Toast.makeText(DetailedActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }
