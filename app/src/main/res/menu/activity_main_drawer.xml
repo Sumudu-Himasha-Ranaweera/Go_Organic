@@ -39,8 +39,15 @@
             android:iconTint="@color/black"
             android:title="@string/payment" />
 
+
         <item
             android:id="@+id/nav_Cart"
+            android:icon="@drawable/ic_wishlist"
+            android:iconTint="@color/black"
+            android:title="@string/wishlist" />
+
+        <item
+            android:id="@+id/nav_Cart2"
             android:icon="@drawable/ic_cart"
             android:iconTint="@color/black"
             android:title="@string/my_cart" />

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,7 @@ public class CategoryFragment extends Fragment {
     NavCategoryAdapter navCategoryAdapter;
 
     FirebaseFirestore db;
+    ProgressBar progressBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,11 +44,15 @@ public class CategoryFragment extends Fragment {
         recyclerView = root.findViewById(R.id.cat_rec);
         db = FirebaseFirestore.getInstance();
 
+        progressBar = root.findViewById(R.id.progressbar);
+        progressBar.setVisibility(View.VISIBLE);
+
         //Category Items
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         categoryModelList = new ArrayList<>();
         navCategoryAdapter = new NavCategoryAdapter(getActivity(),categoryModelList);
         recyclerView.setAdapter(navCategoryAdapter);
+        recyclerView.setVisibility(View.GONE);
 
         db.collection("NavCategory")
                 .get()
@@ -59,10 +65,14 @@ public class CategoryFragment extends Fragment {
                                 NavCategoryModel navCategoryModel = document.toObject(NavCategoryModel.class);
                                 categoryModelList.add(navCategoryModel);
                                 navCategoryAdapter.notifyDataSetChanged();
+                                progressBar.setVisibility(View.GONE);
+                                recyclerView.setVisibility(View.VISIBLE);
                             }
                         } else {
 
                             Toast.makeText(getActivity(),"Error"+task.getException(), Toast.LENGTH_SHORT).show();
+                            progressBar = root.findViewById(R.id.progressbar);
+                            progressBar.setVisibility(View.VISIBLE);
 
                         }
                     }

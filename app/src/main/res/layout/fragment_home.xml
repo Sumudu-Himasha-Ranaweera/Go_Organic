@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <TextView
+            <EditText
                 android:elevation="3dp"
                 android:id="@+id/search_box"
                 android:layout_width="match_parent"
@@ -36,6 +36,13 @@
                 android:padding="13dp"
                 android:hint="Search Your Item Here......."
                 android:drawablePadding="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_rec"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"/>
 
             //Popular Products---------------------------------------
             <LinearLayout

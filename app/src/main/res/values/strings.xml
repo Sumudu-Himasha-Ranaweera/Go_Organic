@@ -29,6 +29,7 @@
     <string name="payment">Payment</string>
     <string name="my_cart">My Cart</string>
     <string name="join_as_a_farmer">Join As a Farmer</string>
+    <string name="wishlist">WishList</string>
 
 
 </resources>

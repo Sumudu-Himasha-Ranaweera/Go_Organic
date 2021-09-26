@@ -6,15 +6,17 @@ public class NavCategoryModel {
     String img_url;
     String discount;
     String description;
+    String type;
 
     public NavCategoryModel() {
     }
 
-    public NavCategoryModel(String name, String img_url, String discount, String description) {
+    public NavCategoryModel(String name, String img_url, String discount, String description, String type) {
         this.name = name;
         this.img_url = img_url;
         this.discount = discount;
         this.description = description;
+        this.type = type;
     }
 
     public String getName() {
@@ -47,5 +49,13 @@ public class NavCategoryModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
