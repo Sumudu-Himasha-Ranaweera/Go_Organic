@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentDetails">
+    <TextView
+        android:id="@+id/Payment_Details_T"
+        android:layout_width="324dp"
+        android:layout_height="78dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="409dp"
+        android:background="#F4F8F4"
+        android:text="@string/Payment_Details_T"
+        android:textColor="#070707"
+        android:textSize="34sp" />
+
+    <Button
+        android:id="@+id/buttton_credit_card"
+        android:layout_width="240dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginBottom="275dp"
+        android:text="@string/button_credit_card"
+        android:textSize="24sp"
+        app:backgroundTint="#4CAF50" />
+
+    <Button
+        android:id="@+id/button_cash_on_deliver"
+        android:layout_width="248dp"
+        android:layout_height="71dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:layout_marginBottom="147dp"
+        android:text="@string/cash_on_deliver"
+        android:textSize="20sp"
+        app:backgroundTint="#4CAF50" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="201dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="530dp"
+        app:srcCompat="@drawable/pecture1_1" />
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.go_organic;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class PaymentFragment extends Fragment {
+    Button payment_details;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +61,21 @@ public class PaymentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_payment, container, false);
+        View root = inflater.inflate(R.layout.fragment_payment, container, false);
+       payment_details = root.findViewById(R.id.payment_details);
+        payment_details.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent i = new Intent();
+                        i.setClass(getActivity(), PaymentDetails.class);
+                        startActivity(i);
+                    }
+                });
+        return  root;
+
     }
 }
