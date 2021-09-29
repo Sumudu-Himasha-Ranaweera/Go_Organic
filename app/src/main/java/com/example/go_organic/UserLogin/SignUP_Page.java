@@ -1,8 +1,10 @@
 package com.example.go_organic.UserLogin;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -31,6 +33,9 @@ public class SignUP_Page extends AppCompatActivity {
     EditText name, email, password;
     ImageButton btnCheck;
     TextView txt_signIn;
+
+    //Email Pattern
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     //Firebase Connection
     FirebaseAuth auth;
@@ -75,6 +80,7 @@ public class SignUP_Page extends AppCompatActivity {
 
                 createUser();
                 progressBar.setVisibility(View.VISIBLE);
+
             }
         });
 
@@ -130,6 +136,12 @@ public class SignUP_Page extends AppCompatActivity {
             return;
         }
 
+        if (userEmail.matches(emailPattern)) {
+            //Toast.makeText(getApplicationContext(),"valid email address",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
+        }
+
         if (TextUtils.isEmpty(userPassword))
         {
             Toast.makeText(this,"Fill the Password", Toast.LENGTH_SHORT).show();
@@ -155,12 +167,29 @@ public class SignUP_Page extends AppCompatActivity {
                     database.getReference().child("Registered Users").child(id).setValue(userModel);
                     progressBar.setVisibility(View.GONE);
 
-                    Toast.makeText(SignUP_Page.this,"Registration Successful", Toast.LENGTH_SHORT).show();
+                    new AlertDialog.Builder(SignUP_Page.this)
+                            .setIcon(R.drawable.ic_check)
+                            .setTitle("Registration Successful")
+                            .setMessage("Please Login yourself again")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent i = new Intent(SignUP_Page.this, SignIN_Page.class);
+                                    startActivity(i);
+                                }
+                            }).setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    }).show();
+
+                    //Toast.makeText(SignUP_Page.this,"Registration Successful", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(SignUP_Page.this,"Error : "+task.getException(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(SignUP_Page.this,"Error : "+task.getException(), Toast.LENGTH_SHORT).show();
                 }
 
             }

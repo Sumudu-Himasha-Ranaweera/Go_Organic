@@ -1,8 +1,10 @@
 package com.example.go_organic.UserLogin;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -70,8 +72,6 @@ public class SignIN_Page extends AppCompatActivity {
             public void onClick(View v) {
                 LoginUser();
                 progressBar.setVisibility(View.VISIBLE);
-                Intent i = new Intent(SignIN_Page.this, HomePage.class);
-                startActivity(i);
             }
         });
 
@@ -129,13 +129,8 @@ public class SignIN_Page extends AppCompatActivity {
             return;
         }
 
-        if(userPassword.length() < 6)
-        {
-            Toast.makeText(this,"Password Length should be greater than 6", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
-        //Login User
+        //Login User Validation
         auth.signInWithEmailAndPassword(userEmail,userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
@@ -143,11 +138,40 @@ public class SignIN_Page extends AppCompatActivity {
                 if (task.isSuccessful())
                 {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(SignIN_Page.this,"Login Successfully", Toast.LENGTH_SHORT).show();
+
+                    new AlertDialog.Builder(SignIN_Page.this)
+                            .setIcon(R.drawable.ic_check)
+                            .setTitle(" Login Successfully")
+                            .setMessage("Here's Your First Step With Us !!")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent i = new Intent(SignIN_Page.this, HomePage.class);
+                                    startActivity(i);
+                                }
+                            }).show();
+
                 }else
                 {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(SignIN_Page.this,"Register Your Self First", Toast.LENGTH_SHORT).show();
+
+                    new AlertDialog.Builder(SignIN_Page.this)
+                            .setIcon(R.drawable.warning)
+                            .setTitle(" Login Unsuccessful")
+                            .setMessage("Please Register Your Self First !!")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent i = new Intent(SignIN_Page.this, SignUP_Page.class);
+                                    startActivity(i);
+                                }
+                            }).setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            }).show();
+
                 }
 
             }

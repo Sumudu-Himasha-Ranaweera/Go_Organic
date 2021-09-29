@@ -12,12 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.go_organic.models.MyCartModel;
 import com.example.go_organic.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -38,7 +36,6 @@ public class DetailedActivity extends AppCompatActivity {
     Button addtoCart;
     Toolbar toolbar;
 
-
     FirebaseFirestore firestore;
     FirebaseAuth auth;
 
@@ -55,6 +52,7 @@ public class DetailedActivity extends AppCompatActivity {
 
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
+
 
         final Object object = getIntent().getSerializableExtra("detail");
         if (object instanceof ViewAllModel){
@@ -149,13 +147,6 @@ public class DetailedActivity extends AppCompatActivity {
         cartMap.put("currentTime", saveCurrentTime);
         cartMap.put("totalQuantity", quantity.getText().toString());
         cartMap.put("totalPrice", totalPrice);
-
-        //new
-        /*FirebaseRecyclerOptions<MyCartModel> options =
-                new FirebaseRecyclerOptions.Builder<MyCartModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Cart Items"), MyCartModel.class)
-                        .build();*/
-        //end
 
         firestore.collection("AddedProducts").document(auth.getCurrentUser().getUid())
                 .collection("CurrentUser").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
