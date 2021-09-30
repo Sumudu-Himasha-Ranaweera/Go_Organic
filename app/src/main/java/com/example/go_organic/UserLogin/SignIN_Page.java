@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import org.jetbrains.annotations.NotNull;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 public class SignIN_Page extends AppCompatActivity {
 
     private View decorView;
@@ -119,13 +121,13 @@ public class SignIN_Page extends AppCompatActivity {
 
         if (TextUtils.isEmpty(userEmail))
         {
-            Toast.makeText(this,"Fill the Email", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this,"Fill the Email", Toast.LENGTH_SHORT, R.style.mytoast).show();
             return;
         }
 
         if (TextUtils.isEmpty(userPassword))
         {
-            Toast.makeText(this,"Fill the Password", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this,"Fill the Password", Toast.LENGTH_SHORT, R.style.mytoast).show();
             return;
         }
 
@@ -162,13 +164,19 @@ public class SignIN_Page extends AppCompatActivity {
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+
                                     Intent i = new Intent(SignIN_Page.this, SignUP_Page.class);
                                     startActivity(i);
+
                                 }
                             }).setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
+
+                                    //clear the fields after submitted
+                                    email.getText().clear();
+                                    password.getText().clear();
                                 }
                             }).show();
 

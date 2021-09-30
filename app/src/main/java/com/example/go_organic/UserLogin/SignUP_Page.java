@@ -25,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 public class SignUP_Page extends AppCompatActivity {
 
     //attribute for remove bottom status bar
@@ -126,31 +128,33 @@ public class SignUP_Page extends AppCompatActivity {
 
         if (TextUtils.isEmpty(userName))
         {
-            Toast.makeText(this,"Fill the Name", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this,"Fill the Name", Toast.LENGTH_SHORT, R.style.mytoast).show();
             return;
         }
 
         if (TextUtils.isEmpty(userEmail))
         {
-            Toast.makeText(this,"Fill the Email", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this,"Fill the Email", Toast.LENGTH_SHORT, R.style.mytoast).show();
             return;
         }
 
         if (userEmail.matches(emailPattern)) {
             //Toast.makeText(getApplicationContext(),"valid email address",Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT, R.style.mytoast).show();
+            email.getText().clear();
         }
 
         if (TextUtils.isEmpty(userPassword))
         {
-            Toast.makeText(this,"Fill the Password", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this,"Fill the Password", Toast.LENGTH_SHORT, R.style.mytoast).show();
             return;
         }
 
         if(userPassword.length() < 6)
         {
-            Toast.makeText(this,"Password Length should be greater than 6", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this,"Password Length should be greater than 6", Toast.LENGTH_SHORT, R.style.mytoast).show();
+            password.getText().clear();
             return;
         }
 
@@ -181,6 +185,11 @@ public class SignUP_Page extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
+
+                            //clear the fields after submitted
+                            name.getText().clear();
+                            email.getText().clear();
+                            password.getText().clear();
                         }
                     }).show();
 

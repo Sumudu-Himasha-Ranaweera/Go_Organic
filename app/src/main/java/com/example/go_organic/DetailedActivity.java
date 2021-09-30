@@ -25,6 +25,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 public class DetailedActivity extends AppCompatActivity {
 
     TextView quantity;
@@ -152,7 +154,7 @@ public class DetailedActivity extends AppCompatActivity {
                 .collection("CurrentUser").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<DocumentReference> task) {
-                Toast.makeText(DetailedActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+                StyleableToast.makeText(DetailedActivity.this, "Added Successfully", Toast.LENGTH_SHORT, R.style.mytoast2).show();
                 finish();
             }
         });
